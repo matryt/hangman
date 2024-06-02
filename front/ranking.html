@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Hangman Game - Classement</title>
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+	        <div class="darkModeContainer"><button id="darkMode">Dark mode</button></div>
+	        <h1>Hangman - Classement</h1>
+	        <div id="accountHeader"><button id="logout">Se déconnecter</button></div>
+        </header>
+        <nav>
+	        <a href="index.html"><button>Accueil</button></a>
+        </nav>
+        <main>
+	        <div id="content">
+		        <div id="ranking">
+			        <table>
+				        <thead>
+				        <tr>
+					        <th scope="col">Classement</th>
+					        <th scope="col">Utilisateur</th>
+					        <th scope="col">Points</th>
+					        <th scope="col">Nombre de parties</th>
+					        <th scope="col">Victoires</th>
+					        <th scope="col">Niveau</th>
+				        </tr>
+				        </thead>
+				        <tbody>
+				        </tbody>
+			        </table>
+		        </div>
+	        </div>
+	        <div id="displayMessages" class="notDisplayed">
+		        <div>
+			        &#9888;
+		        </div>
+		        <div>
+			        <p>
+				        Erreur :
+			        </p>
+			        <p>
+
+			        </p>
+		        </div>
+	        </div>
+        </main>
+        <script defer src="ranking_script.js"></script>
+    </body>
+</html>

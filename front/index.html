@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>TD 3 - Application au Web</title>
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+	        <div class="darkModeContainer"><button id="darkMode">Dark mode</button></div>
+	        <h1>Le jeu du pendu</h1>
+	        <div id="accountHeader"><button id="logout" class="notDisplayed">Se déconnecter</button></div>
+        </header>
+        <nav>
+	        <a href="ranking.html"><button id="ranking" class="notDisplayed">Classement</button></a>
+        </nav>
+        <main>
+	        <div id="accounts">
+		        <div>
+			        <p>Inscription</p>
+			        <div>
+				        <label for="pseudo">Pseudo</label>
+				        <input id="pseudo" type="text">
+			        </div>
+			        <div><label for="email">E-mail</label><input id="email" type="email" autocomplete="email"></div>
+			        <div>
+				        <label for="password">Mot de passe</label>
+				        <input id="password" type="password">
+				        <span class="reveal" id="reveal-signup"><img src="closedEye.svg" alt="Reveal password"/></span>
+			        </div>
+
+			        <button id="signup">S'inscrire</button>
+			        <div id="requirements">
+				        <p>
+					       Votre mot de passe doit contenir :
+				        </p>
+				        <ol>
+					        <li><span>&#9888;</span> 8 caractères minimum</li>
+					        <li><span>&#9888;</span> Au moins une lettre</li>
+					        <li><span>&#9888;</span> Au moins un chiffre</li>
+				        </ol>
+			        </div>
+		        </div>
+		        <div>
+			        <p>Connexion</p>
+			        <div><label for="email2">E-mail</label><input id="email2" type="email" autocomplete="email"></div>
+			        <div>
+				        <label for="password2">Mot de passe</label>
+				        <input id="password2" type="password">
+				        <span class="reveal" id="reveal-signin"><img src="closedEye.svg" alt="Reveal password"/></span>
+			        </div>
+
+			        <button id="signin">Connexion</button>
+		        </div>
+	        </div>
+	        <div id="content">
+		        <div id="pendu" class="notDisplayed">
+			        <svg height="260" width="260">
+				        <line x1="30" y1="250" x2="230" y2="250" id="basement"/>
+				        <line id="pillar" class="notDisplayed hangmanElement" x1="80" y1="250" x2="80" y2="20" />
+				        <g class="hangmanElement">
+					        <line x1="80" y1="20" x2="180" y2="20" />
+					        <line x1="80" y1="75" x2="130" y2="20" />
+				        </g>
+
+				        <line class="notDisplayed hangmanElement" id="rope" x1="180" y1="20" x2="180" y2="60" />
+				        <g class="hangmanElement">
+					        <circle cx="180" cy="84" r="25" stroke-width="4"/>
+					        <circle cx="173" cy="78" r="3"/>
+					        <circle cx="187" cy="78" r="3"/>
+					        <path d=" M 195 87 A 15 12 0 0 1 165 87" />
+				        </g>
+				        <line class="notDisplayed hangmanElement" id="trunk" x1="180" y1="110" x2="180" y2="150" />
+				        <g class="hangmanElement">
+					        <line id="armL" x1="180" y1="120" x2="150" y2="135" />
+					        <line id="armR" x1="180" y1="120" x2="210" y2="135" />
+				        </g>
+				        <g class="notDisplayed hangmanElement">
+					        <line id="legL" x1="180" y1="150" x2="160" y2="190" />
+					        <line id="legR" x1="180" y1="150" x2="200" y2="190" />
+				        </g>
+			        </svg>
+		        </div>
+		        <div id="mainPart">
+			        <button class="notDisplayed" id="play">Nouvelle partie</button>
+			        <div class="notDisplayed" id="gameLevels">
+				        <label for="level-select"> Choisissez un niveau de difficulté :</label>
+				        <select name="level" id="level-select">
+					        <option value="easy">Facile</option>
+					        <option value="medium">Moyen</option>
+					        <option value="hard">Difficile</option>
+				        </select>
+			        </div>
+			        <button class="notDisplayed" id="resetGame">Continuer une partie</button>
+
+			        <div class="notDisplayed" id="displayWord">________</div>
+			        <button class="notDisplayed" id="restart">Recommencer</button>
+		        </div>
+		        <div class="notDisplayed" id="letters">
+			        <span>A</span>
+			        <span>B</span>
+			        <span>C</span>
+			        <span>D</span>
+			        <span>E</span>
+			        <span>F</span>
+			        <span>G</span>
+			        <span>H</span>
+			        <span>I</span>
+			        <span>J</span>
+			        <span>K</span>
+			        <span>L</span>
+			        <span>M</span>
+			        <span>N</span>
+			        <span>O</span>
+			        <span>P</span>
+			        <span>Q</span>
+			        <span>R</span>
+			        <span>S</span>
+			        <span>T</span>
+			        <span>U</span>
+			        <span>V</span>
+			        <span>W</span>
+			        <span>X</span>
+			        <span>Y</span>
+			        <span>Z</span>
+		        </div>
+
+	        </div>
+	        <div id="displayMessages" class="notDisplayed">
+		        <div>
+			        &#9888;
+		        </div>
+		        <div>
+			        <p>
+				        Erreur :
+			        </p>
+			        <p>
+
+			        </p>
+		        </div>
+	        </div>
+        </main>
+        <script defer src="script.js"></script>
+    </body>
+</html>

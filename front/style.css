@@ -1,0 +1,426 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    --title-main-color: #FF7043;   /* Orange chaud */
+    --main-border-color: #4FC3F7;  /* Bleu doux */
+    --main-bg-color: #E1F5FE;      /* Bleu ciel */
+    --main-text-color: #0D47A1;    /* Bleu foncé */
+    --hover-bg-color: #B3E5FC;     /* Bleu clair */
+    --ok-color: #66BB6A;           /* Vert clair */
+}
+
+body.dark {
+    --main-bg-color: #0D1B2A;      /* Bleu nuit */
+    --main-text-color: #E1F5FE;    /* Bleu ciel */
+    --hover-bg-color: #1B263B;     /* Bleu nuit plus clair */
+}
+
+html, body {
+    margin: 5px;
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    font-family: "Montserrat", sans-serif;
+    font-size: 17px;
+}
+
+header {
+    height: 8vh;
+}
+
+#content {
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 20vw auto 20vw;
+    height: 40vw;
+}
+
+#pendu {
+    height: fit-content;
+    align-self: center;
+}
+
+.notDisplayed {
+    visibility: hidden;
+}
+
+#displayMessages.notDisplayed {
+    opacity: 0;
+    transition: visibility 0s 1s, opacity 1s ease-in-out;
+}
+
+#accounts.notDisplayed, button.notDisplayed {
+    display: none;
+}
+
+h1 {
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+    border: 2px solid var(--main-border-color);
+    border-radius: 10px;
+    width: fit-content;
+    padding: 5px;
+    color: var(--title-main-color);
+    font-size: 1.8em;
+}
+
+#mainPart {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#mainPart * {
+    margin: 10px auto;
+}
+
+button, input {
+    border: 2px solid var(--main-border-color);
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    border-radius: 5px;
+    padding: 5px;
+    font-family: "Montserrat", sans-serif;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px var(--main-bg-color) inset;
+    -webkit-text-fill-color: var(--main-text-color);
+}
+
+button {
+    transition: background-color ease 0.3s;
+    box-shadow: 4px 4px 20px -3px rgba(0,0,0,0.2);
+}
+
+button:hover {
+    background-color: var(--hover-bg-color);
+    transition: background-color ease 0.3s;
+}
+
+#letters {
+    display: grid;
+    grid-template: repeat(4, max(32px, 2.8vw)) / repeat(7, max(32px, 2.8vw));
+    height: fit-content;
+    align-self: center;
+}
+
+#letters span {
+    border: 2px solid var(--main-border-color);
+    display: inline-flex;
+    padding: 2px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 3px;
+    font-weight: 700;
+    align-items: center;
+    justify-content: center;
+    width: 1.8vw;
+    height: 1.8vw;
+    min-width: 22px;
+    min-height: 22px;
+}
+
+#letters span.ko {
+    background-color: var(--main-border-color);
+}
+
+#letters span.ok {
+    border-color: var(--ok-color);
+    background-color: var(--ok-color);
+}
+
+#letters span:not(:is(.ok, .ko)):hover {
+    background-color: var(--hover-bg-color);
+}
+
+#letters {
+    user-select: none;
+}
+
+svg * {
+    stroke: var(--main-border-color);
+    stroke-width: 3px;
+}
+
+svg circle, svg path {
+    fill: none
+}
+
+#accounts {
+    padding: 5px;
+    border-radius: 5px;
+    width: fit-content;
+    margin: 30px auto 10px auto;
+    border: 2px solid var(--main-border-color);
+    display: flex;
+    gap: 10px;
+}
+
+#accounts p {
+    margin: 5px 5px 20px 5px;
+    text-align: center;
+    color: var(--title-main-color);
+    font-weight: bold;
+    font-size: 19px;
+}
+
+#accounts label {
+    margin-right: 10px;
+    
+}
+
+#accounts div {
+    margin-bottom: 10px;
+}
+
+#accounts > div {
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+    align-items: center;
+}
+
+#email, #email2 {
+    min-width: 165px;
+}
+
+#displayMessages {
+    margin: 10px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    border: 2px solid var(--main-border-color);
+    padding: 10px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+    color: white;
+}
+
+#displayMessages div:first-child {
+    height: fit-content;
+    margin: 3px 5px 3px 0px;
+}
+
+#displayMessages p {
+    margin: 5px 5px 5px 0px;
+}
+
+#displayMessages p:first-child {
+    font-weight: bold;
+}
+
+#mainPart button:first-child, #displayWord {
+    margin-top: 41vh;
+}
+
+#accountHeader {
+    top: 0;
+    right: 0;
+}
+
+#requirements {
+    margin: 20px 15px 0px 0px;
+}
+
+ol {
+    margin: 2px;
+}
+
+#requirements p {
+    margin: 0px 10px;
+}
+
+#requirements span {
+    display: inline-block;
+    margin: 0px 10px;
+}
+
+#requirements ol li {
+    color: #FF7043
+}
+
+@media screen and (max-width: 1150px) {
+    #letters {
+        grid-template: repeat(6, max(32px, 2.8vw)) / repeat(5, max(32px, 2.8vw));
+    }
+}
+
+
+
+
+.reveal {
+    display: inline-block;
+    position: relative;
+    top: 7px;
+    left: 3px;
+}
+
+#reveal-signin {
+    margin-right: 5px;
+}
+
+.reveal {
+    color: var(--title-main-color)
+}
+
+#signup, #signin {
+    justify-self: center;
+    align-self: center
+}
+
+header {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    gap: 5px;
+    height: fit-content;
+}
+
+#darkMode {
+    height: fit-content;
+}
+
+#gameLevels {
+    margin-top: 0px;
+}
+
+#play {
+    margin-bottom: 0px;
+}
+
+#gameLevels label {
+    display: inline-block;
+    min-height: 21px;
+}
+
+#level-select {
+    border-radius: 5px;
+    border: 2px solid var(--main-border-color);
+    margin: 0px;
+    min-height: 21px;
+}
+
+#level-select option, #level-select {
+    color: var(--main-text-color);
+    background-color: var(--main-bg-color);
+}
+
+#play.notDisplayed + #gameLevels {
+    position: absolute;
+    top: 45vh;
+    left: 40vw;
+}
+
+#content:has(#ranking) {
+    display: block;
+}
+
+#ranking {
+    margin: 10px;
+    text-align: center;
+}
+
+table {
+    border: 1px solid var(--main-border-color);
+    border-radius: 13px;
+    border-spacing: 0;
+    margin: auto;
+    table-layout: fixed;
+    width: 100%;
+}
+table td,
+table th {
+    border-bottom: 1px solid var(--main-border-color);
+    padding: 10px;
+    max-width: 100%;
+    overflow-x: hidden;
+    word-break: break-word;
+}
+table tr:last-child > td {
+    border-bottom: none;
+}
+
+nav {
+    text-align: center;
+    margin: 10px;
+}
+
+@media screen and (max-width: 1100px) {
+    #play.notDisplayed + #gameLevels {
+        left: 30vw;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #play.notDisplayed + #gameLevels {
+        left: 25vw;
+        top: 70vh;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    #content {
+        display: block;
+    }
+
+    #mainPart {
+        margin-bottom: 20px;
+    }
+
+    #letters {
+        width: fit-content;
+        margin: auto;
+    }
+
+    #pendu {
+        width: fit-content;
+        margin: auto;
+    }
+
+    svg {
+        height: 230px;
+    }
+
+    #accounts {
+        display: block;
+    }
+
+    #accounts > div:first-child {
+        border-bottom: 2px solid var(--main-border-color);
+        padding-bottom: 10px;
+    }
+
+    #accounts > div:last-child {
+        padding-top: 7px;
+    }
+
+
+    #mainPart button:first-child, #displayWord {
+        margin-top: 5vh;
+    }
+
+    #letters {
+        grid-template: repeat(4, max(32px, 2.8vw)) / repeat(7, max(32px, 2.8vw));
+    }
+
+    table td, table th {
+        padding: 5px;
+    }
+
+}
+
+@media screen and (max-width: 650px) {
+    table td, table th {
+        padding: 2px;
+    }
+}
+
