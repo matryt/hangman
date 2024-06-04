@@ -141,7 +141,7 @@ async function checkLetter(letter) {
         letterInfos = await getLetterInfos(letter);
         if (letterInfos[0] != null && errors <= maxErrors && !isWordFound()) {
             if (letterInfos[0]) {
-                for (let index of letterInfos[1]) { //letterInfos[1] : position
+                for (let index of letterInfos[1]) {
                     wordArray[index] = letter.innerText;
                 }
                 letter.innerHTML="&#10003;";
@@ -174,7 +174,7 @@ function isWordFound() {
 function displayWord() {
     let wordToDisplay = "";
     for (let letter of wordArray) {
-        if (letter == "") letter = "_"
+        if (letter === "") letter = "_"
         wordToDisplay += letter;
         wordToDisplay += " ";
     }

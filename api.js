@@ -105,11 +105,6 @@ async function manageRequest(request, response) {
             break;
         }
         case ("testLetter"): {
-            /*if (!response.headers["token"]) {
-                response.statusCode = 401;
-                response.end("Aucun token d'authentification présent !")
-            }*/
-
             testLetter(data["params"], response, request.headers).then();
             break;
         }
