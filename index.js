@@ -37,4 +37,4 @@ const server = http.createServer((req, res) => {
         handleRequest(req, res);
     });
 });
-server.listen(8000);
+server.listen(process.env.PORT);
