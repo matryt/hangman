@@ -93,10 +93,6 @@ async function manageRequest(request, response) {
             return;
         }
         case ("newGame"): {
-            /*if (!response.headers["token"]) {
-                response.statusCode = 401;
-                response.end("Aucun token d'authentification présent !")
-            }*/
             let returnData = newGame(data["params"], response, request.headers);
             if (returnData) {
                 response.statusCode = 200;
@@ -158,7 +154,9 @@ async function manageRequest(request, response) {
         }
         default: {
             response.statusCode = 404;
-            response.end("Page not found !");
+            fs.readFile("./front/notfound.html", (err, data) => {
+                response.end(data);
+            });
         }
     }
 }

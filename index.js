@@ -23,8 +23,7 @@ function parseJsonBody(req, res, next) {
     });
     req.on('end', () => {
         try {
-            const parsedBody = JSON.parse(body);
-            req.body = parsedBody;
+            req.body = JSON.parse(body);
 
         } catch (error) {
         }
