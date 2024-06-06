@@ -17,7 +17,7 @@ body.dark {
 
 html, body {
     margin: 5px;
-    height: 100vh;
+    height: 98vh;
     box-sizing: border-box;
     background-color: var(--main-bg-color);
     color: var(--main-text-color);
@@ -112,7 +112,7 @@ button:hover {
     border: 2px solid var(--main-border-color);
     display: inline-flex;
     padding: 2px;
-    border-radius: 5px;
+    border-radius: 20px;
     text-align: center;
     margin: 3px;
     font-weight: 700;
@@ -287,6 +287,7 @@ header {
 
 #darkMode {
     height: fit-content;
+    margin: 0px 1vw;
 }
 
 #gameLevels {
@@ -423,4 +424,3 @@ nav {
         padding: 2px;
     }
 }
-

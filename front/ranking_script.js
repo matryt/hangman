@@ -11,12 +11,12 @@ function handleLogout() {
     if (localStorage.getItem("token")) {
         localStorage.removeItem("token");
         displayMessageBox("OK", "Déconnexion prise en compte !");
-        window.location.href="http://localhost:8000";
+        window.location.href="http://localhost:12000";
     }
 }
 
 async function getRanking() {
-    return (await (await fetch("http://localhost:8000/api/ranking")).json());
+    return (await (await fetch("http://localhost:12000/api/ranking")).json());
 }
 
 function displayData(data) {

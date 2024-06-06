@@ -23,6 +23,7 @@ const mimeTypes = {
 };
 
 function manageRequest(request, response) {
+    console.log(request.url);
     if (request.url.includes("..")) {
         response.statusCode = 403;
         response.end("Vous n'avez pas le droit d'accéder à ce fichier !");
@@ -38,11 +39,13 @@ function manageRequest(request, response) {
     else {
         filename = front;
     }
+    console.log("filename : " + filename);
     try {
         let file = fs.statSync(filename);
         if (file.isDirectory()) {
             filename = filename + "/" + defaultURL;
         }
+        console.log(filename);
         try {
             fs.readFile(filename, (err, data) => {
                 if (err) throw err;

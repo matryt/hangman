@@ -4,6 +4,7 @@ const files = require("./files");
 
 function handleRequest(req, rep) {
     let urlParts = req.url.split("/");
+    console.log(urlParts);
     switch (urlParts[1]) {
         case "api": {
             api.manage(req, rep).then();

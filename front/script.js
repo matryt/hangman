@@ -64,7 +64,7 @@ async function getNewGame() {
     try {
         displayMessageBox("OK", "Chargement...");
         let level = levelChoice.querySelector("select").value;
-        let response = await fetch(`http://localhost:${process.env.PORT}/api/newGame?level=${level}`, {
+        let response = await fetch(`http://localhost:12000/api/newGame?level=${level}`, {
             headers: {
                 "token": token
             },
@@ -101,7 +101,7 @@ async function newGame() {
 }
 
 async function getLetterInfos(letter) {
-    let url = `http://localhost:${process.env.PORT}/api/testLetter?letter=` + letter.innerText;
+    let url = `http://localhost:12000/api/testLetter?letter=` + letter.innerText;
     let data;
     let returnData = [null, null];
     try {
@@ -223,7 +223,7 @@ async function handleSignUp() {
             displayMessageBox("Erreur", "L'adresse mail est invalide !");
             return;
         }
-        let response = await fetch(`http://localhost:${process.env.PORT}/api/signup`, {
+        let response = await fetch(`http://localhost:12000/api/signup`, {
             method: "POST",
             body: JSON.stringify(bodyDict),
             headers: {
@@ -251,7 +251,7 @@ async function handleLogin() {
         "password": passwordAreaSignin.value
     };
     try {
-        let response = await fetch(`http://localhost:${process.env.PORT}/api/signin`, {
+        let response = await fetch(`http://localhost:12000/api/signin`, {
             method: "POST",
             body: JSON.stringify(bodyDict)
         })
@@ -284,7 +284,7 @@ function displayHome() {
 
 async function reloadGame() {
     try {
-        let response = await fetch(`http://localhost:${process.env.PORT}/api/gameState`, {
+        let response = await fetch(`http://localhost:12000/api/gameState`, {
             headers: {
                 "token": token
             },
